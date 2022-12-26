@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class TiposObsPage extends StatelessWidget {
   TiposObsPage({Key? key}) : super(key: key);
 
-  /// usa se o Rxn pra poder usar o nulo
+  /// usa se o .oba ao final da variavel
 
   final nome = 'Leo Gonzalez'.obs;
   final isAluno = true.obs;
@@ -29,32 +29,32 @@ class TiposObsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Obx(() {
-              return Text('Id do aluno: ${aluno.value?['id']}');
+              return Text('Id do aluno: ${aluno.value['id']}');
 
               /// >>> usar o .value
             }),
             Obx(() {
-              return Text('Nome do aluno: ${aluno.value?['nome']}');
+              return Text('Nome do aluno: ${aluno.value['nome']}');
 
               /// >>> usar o .value
             }),
             Obx(() {
               return Column(
-                children: jornadas.value?.map(Text.new).toList() ?? [],
+                children: jornadas.value.map(Text.new).toList(),
 
                 /// >>> usar o .value
               );
             }),
             ElevatedButton(
               onPressed: () {
-                aluno.value?['id'] = 10;
+                aluno.value['id'] = 10;
                 aluno.refresh();
               },
               child: const Text('Alterar ID'),
             ),
             ElevatedButton(
               onPressed: () {
-                jornadas.value?.add('Jornada DART');
+                jornadas.value.add('Jornada DART');
 
                 /// >>> usar o .value
                 jornadas.refresh(); // >>> usar o refresh para atualizar
