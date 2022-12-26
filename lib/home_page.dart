@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
               onPressed: () {
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Básico Reatividade'),
             ),
+
             ///
             TextButton(
               onPressed: () {
@@ -26,8 +28,23 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Tipos Reativos'),
             ),
-            ///
-
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/tiposReativosGenericos');
+              },
+              child: const Text('Tipos Reativos Genéricos'),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/TiposReativosGenericosNuloPage');
+              },
+              child: const Text('Tipos Reativos Genéricos Nulos'),
+            ),TextButton(
+              onPressed: () {
+                Get.toNamed('/TiposObsPage');
+              },
+              child: const Text('Tipos Obs'),
+            ),
           ],
         ),
       ),
