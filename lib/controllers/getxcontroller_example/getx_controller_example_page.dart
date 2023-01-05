@@ -33,7 +33,14 @@ class _GetxControllerExamplePageState extends State<GetxControllerExamplePage> {
             onPressed: () {
               Get.find<Controller>().alterarDados();
             },
-            child: Text('alterar dodos'),
+            child: Text('alterar dados'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Get.reload<Controller>(); // só funciona com lazyPut
+              setState(() {});
+            },
+            child: Text('recarregar controller'),
           )
         ],
       )),
