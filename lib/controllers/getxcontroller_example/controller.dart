@@ -1,7 +1,10 @@
 import 'package:get/get.dart';
 
 class Controller extends GetxController {
-  final nome = 'leo'.obs;
+  final _nome = 'leo'.obs;  
+
+  String get nome => _nome.value;
+
 
   @override
   void onInit() {
@@ -22,6 +25,6 @@ class Controller extends GetxController {
   }
 
   alterarDados() {
-    nome('isaac');
+    _nome('isaac');
   }
 }

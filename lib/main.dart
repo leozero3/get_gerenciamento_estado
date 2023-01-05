@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_gerenciamento_estado/atualizacao/atualizacao_objetos_page.dart';
@@ -28,18 +27,29 @@ class MyApp extends StatelessWidget {
             name: '/tiposReativosGenericos',
             page: () => TiposReativosGenericosPage()),
         GetPage(
+            name: '/tiposReativosGenericos',
+            page: () => TiposReativosGenericosPage()),
+        GetPage(
+            name: '/TiposReativosGenericosNulo',
+            page: () => TiposReativosGenericosNuloPage()),
+        GetPage(name: '/TiposObsPage', page: () => TiposObsPage()),
+        GetPage(
+            name: '/atualizacaoObjetosPage',
+            page: () => AtualizacaoObjetosPage()),
+        GetPage(
             name: '/controllers',
             page: () => ControllersHomePage(),
             children: [
               GetPage(
                   name: '/getxcontroller',
-                  binding: BindingsBuilder.put(() => Controller()),
+                  binding: BindingsBuilder(() {
+                    Get.put(Controller());
+                  }),
+                  // binding: BindingsBuilder(() {
+                  //   Get.lazyPut(() => Controller());
+                  // }),
                   page: () => GetxControllerExamplePage()),
             ]),
-        GetPage(name: '/tiposReativosGenericos', page: () => TiposReativosGenericosPage()),
-        GetPage(name: '/TiposReativosGenericosNulo', page: () => TiposReativosGenericosNuloPage()),
-        GetPage(name: '/TiposObsPage', page: () => TiposObsPage()),
-        GetPage(name: '/atualizacaoObjetosPage', page: () => AtualizacaoObjetosPage()),
       ],
     );
   }

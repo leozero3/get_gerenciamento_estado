@@ -27,7 +27,7 @@ class _GetxControllerExamplePageState extends State<GetxControllerExamplePage> {
           child: Column(
         children: [
           Obx(() {
-            return Text(Get.find<Controller>().nome.value);
+            return Text(Get.find<Controller>().nome);
           }),
           ElevatedButton(
             onPressed: () {
