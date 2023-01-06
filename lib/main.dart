@@ -12,6 +12,8 @@ import 'package:get_gerenciamento_estado/tipos/tipos_obs_page.dart';
 import 'package:get_gerenciamento_estado/tipos/tipos_reativos_genericos_nulo_page.dart';
 import 'package:get_gerenciamento_estado/tipos/tipos_reativos_genericos_page.dart';
 import 'package:get_gerenciamento_estado/tipos/tipos_reativos_page.dart';
+import 'package:get_gerenciamento_estado/workers/workers_controller.dart';
+import 'package:get_gerenciamento_estado/workers/workers_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -52,8 +54,18 @@ class MyApp extends StatelessWidget {
                   // }),
                   page: () => GetxControllerExamplePage()),
             ]),
-        GetPage(name: '/GetxWidget', page: () => GetxWidgetPage(),),
-        GetPage(name: '/local_state_widget', page: () => LocalStateWidgetPage(),)
+        GetPage(
+          name: '/GetxWidget',
+          page: () => GetxWidgetPage(),
+        ),
+        GetPage(
+          name: '/local_state_widget',
+          page: () => LocalStateWidgetPage(),
+        ),
+        GetPage(
+            name: '/workersPage',
+            page: () => WorkersPage(),
+            binding: BindingsBuilder.put(() => WorkersController())),
       ],
     );
   }
